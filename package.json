@@ -1,6 +1,17 @@
 {
   "name": "gdl-burger-queen",
   "version": "0.1.0",
+  "description": "A project developed with react",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ItzelMB/gdl-burger-queen.git"
+  },
+  "autor": "ItzelMB",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ItzelMB/gdl-burger-queen/issues"
+  },
+  "homepage": "https://github.com/ItzelMB/gdl-burger-queen#readme",
   "private": true,
   "dependencies": {
     "react": "^16.8.6",

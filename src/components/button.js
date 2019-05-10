@@ -1,11 +1,11 @@
 import React from 'react';
-import './Button.css';
+//import './Button.css';
 
-const Button = () => {
+const Button = props => {
     const greetinng = 'hi';
     
         return (
-            <button className="Button" onClick={() => {console.log('holi')}}>{greetinng}</button>
+            <button className="Button" key="1" onClick={() => {console.log('holi' + props.name)}}>{greetinng}</button>
         );
 };
 
