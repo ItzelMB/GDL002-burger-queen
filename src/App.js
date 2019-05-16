@@ -1,10 +1,12 @@
 import React from 'react';
-//import './App.css';
-import Button from './components/button';
+import Login from './components/login';
+import './index.css';
 
 const App = () => {
   return (
-    <Button name='GDL' color="red" key="1"/>
+    <section className = "bgLogin">
+      <Login />
+    </section>
   );
 };
 
