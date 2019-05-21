@@ -50,5 +50,12 @@ h2{
 
 .waitersNav {
   display: inline-block;
+  width: 100%;
+  margin:0;
 }
 
+.menuIcons {
+  width: 125px;
+  height: 125px;
+  margin: 0;
+}
