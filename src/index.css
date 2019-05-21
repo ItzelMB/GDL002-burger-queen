@@ -11,16 +11,14 @@ nav ul {
   list-style: none;
 }
 
-nav ul li {
+nav ul .btn btn-primary btn-lg {
   font-size: 1.2rem;
   color: blanchedalmond;
   display: inline-block;
-  line-height: 5rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  margin: 25px;
 }
 
-nav ul li a {
+nav ul a .btn btn-primary btn-lg{
   display: block;
   text-decoration: none;
 }
@@ -33,6 +31,11 @@ h2{
   color: #4F4F4F;
 }
 
+.btn btn-primary btn-lg {
+  width: 250px;
+  height: 55px;
+}
+
 .bgLogin {
   background-image: 
   url("https://github.com/ItzelMB/gdl-burger-queen/blob/develop/src/img/bg-login.png?raw=true");
@@ -43,5 +46,9 @@ h2{
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.waitersNav {
+  display: inline-block;
 }
 

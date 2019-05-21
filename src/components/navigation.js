@@ -5,13 +5,16 @@ import '../index.css';
 
 const Navigation = () => (
     <nav>
-        <ul>
-            <li className="btnDirectioner">
+        <ul> 
+            <button type="button" className="btn btn-primary btn-lg">
                 <Link to={ROUTES.WAITERS}>Meseros</Link>
-            </li>
-            <li className="btnDirectioner">
+            </button> 
+            <button type="button" className="btn btn-primary btn-lg">
                 <Link to={ROUTES.KITCHEN}>Cocina</Link>
-            </li>
+            </button>
+            <button type="button" className="btn btn-primary btn-lg"> 
+                <Link to={ROUTES.LOGIN}>Login</Link>
+            </button>
         </ul>
         
     </nav>

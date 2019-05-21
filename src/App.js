@@ -7,6 +7,7 @@ import Navigation from './components/navigation';
 import './index.css';
 import * as ROUTES from './constants/routes';
 
+
 const App = () => {
   return (
       <Router>
@@ -17,6 +18,7 @@ const App = () => {
           <Route exact path={ROUTES.KITCHEN} component={KitchenInterf}/>
         </div>
       </Router>
+    
   );
 };
 

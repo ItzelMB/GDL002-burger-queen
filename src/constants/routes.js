@@ -1,4 +1,3 @@
-export const LOGIN = '/';
+export const LOGIN = '/login';
 export const WAITERS = '/waiters';
 export const KITCHEN = '/kitchen';
-export const NAVIGATION = '/login';
