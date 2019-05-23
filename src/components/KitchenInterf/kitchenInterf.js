@@ -1,7 +1,7 @@
 import React from 'react';
 
 const KitchenInterf = () => (
-    <h2>Cocina</h2>
+    <h3>Cocina</h3>
 );
 
 export default KitchenInterf;

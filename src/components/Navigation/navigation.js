@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import * as ROUTES from '../constants/routes';
-import '../index.css';
+import * as ROUTES from '../../constants/routes';
+import '../../index.css';
 
 const Navigation = () => (
     <nav>
@@ -14,7 +14,7 @@ const Navigation = () => (
             </button>
             {/*<button type="button" className="btn btn-primary btn-lg"> 
                 <Link to={ROUTES.LOGIN}>Login</Link>
-</button>*/}
+            </button>*/}
         </ul>
         
     </nav>

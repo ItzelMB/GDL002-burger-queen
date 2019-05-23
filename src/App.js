@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
-import Login from './components/login';
-import KitchenInterf from './components/kitchenInterf';
-import WaitersInterf from './components/waitersInterf';
+import Login from './components/Login/login';
+import KitchenInterf from './components/KitchenInterf/kitchenInterf';
+import WaitersInterf from './components/WaitersInterf/waitersInterf';
 import './index.css';
 import * as ROUTES from './constants/routes';
 
