@@ -15,8 +15,7 @@ const App = () => {
           <Route exact path={ROUTES.WAITERS} component={WaitersInterf}/>
           <Route exact path={ROUTES.KITCHEN} component={KitchenInterf}/>
         </div>
-      </Router>
-    
+      </Router> 
   );
 };
 

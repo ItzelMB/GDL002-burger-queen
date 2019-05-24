@@ -1,4 +1,5 @@
-import app from 'firebase/app'
+import app from 'firebase/app';
+import 'firebase/database';
 
 //Web app's Firebase configuration
 const firebaseConfig = {
@@ -14,7 +15,12 @@ const firebaseConfig = {
 class Firebase {
   constructor() {
     app.initializeApp(firebaseConfig);
-  }
+
+    this.db = app.database();
+  };
+
+  getMenu = () => this.db.ref().child();
+  
 };
 
 export default Firebase;
