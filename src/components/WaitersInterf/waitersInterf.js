@@ -1,5 +1,7 @@
 import React from 'react';
-import Client from '../Client/client.js';
+import Client from '../Client/client';
+import MenuMorning from '../Menu/menu';
+import {FirebaseContext} from '../Firebase';
 
 const waitersInterf = () => (
   <section>
@@ -32,23 +34,16 @@ const waitersInterf = () => (
         <a className="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">COMIDAS</a>
       </li>
     </ul>
+    
     <div className="tab-content" id="myTabContent">
+
       <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-        <h3>PLATILLOS</h3>
-        <img src= {require ('../../img/sandwich.png')} alt="sandwich" className="menuIcons"/>
-        <p>sándwich</p>
-        <p>$25.00</p>
-
-        <h3>BEBIDAS</h3>
-        <img src= {require ('../../img/coffe.png')} alt="sandwich" className="menuIcons"/>
-        <p>sándwich</p>
-        <p>$25.00</p>
-
-        <h3>INGREDIENTES EXTRAS</h3>
-        <img src= {require ('../../img/cheese.png')} alt="sandwich" className="menuIcons"/>
-        <p>sándwich</p>
-        <p>$25.00</p>
+      <FirebaseContext.Consumer>
+           {firebase => <MenuMorning firebase={firebase}/>}
+        </FirebaseContext.Consumer>
+        
       </div>
+
       <div className="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
         <h3>PLATILLOS</h3>
           <img src= {require ('../../img/hamburger.png')} alt="sandwich" className="menuIcons"/>
