@@ -1,17 +1,33 @@
 {
   "name": "gdl-burger-queen",
   "version": "0.1.0",
+  "description": "A project developed with react",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ItzelMB/gdl-burger-queen.git"
+  },
+  "autor": "ItzelMB",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ItzelMB/gdl-burger-queen/issues"
+  },
+  "homepage": "https://ItzelMB.github.io/gdl-burger-queen",
   "private": true,
   "dependencies": {
+    "firebase": "^6.0.2",
+    "gh-pages": "^2.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"

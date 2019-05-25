@@ -1,13 +1,61 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+nav ul {
+  list-style: none;
+}
+
+nav ul .btn btn-primary btn-lg {
+  font-size: 1.2rem;
+  color: blanchedalmond;
+  display: inline-block;
+  margin: 25px;
+}
+
+nav ul a .btn btn-primary btn-lg{
+  display: block;
+  text-decoration: none;
+}
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+h2{
+  color: #FFF;
+}
+
+.btn btn-primary btn-lg {
+  width: 250px;
+  height: 55px;
+}
+
+.bgLogin {
+  background-image: 
+  url("https://github.com/ItzelMB/gdl-burger-queen/blob/develop/src/img/bg-login.png?raw=true");
+  box-sizing: content-box;
+  width: 100%;
+  height: 768px;
+  background-attachment: scroll;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.waitersNav {
+  display: inline-block;
+  width: 100%;
+  margin:0;
+}
+
+.menuIcons {
+  width: 125px;
+  height: 125px;
+  margin: 0;
 }
