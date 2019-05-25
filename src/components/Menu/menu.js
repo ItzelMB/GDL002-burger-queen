@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 
-
-
 class MenuMorning extends Component {
     constructor(props){
         super(props);
@@ -13,18 +11,16 @@ class MenuMorning extends Component {
 
     componentDidMount(){
 
-        const firebaseAccess = this.props.firebase.getMenu();
-        console.log(firebaseAccess);
+        const firebaseAccess = this.props.firebase.getRefDb().root.child('breakfast');
         let breakfastElements = [];
 
         firebaseAccess.on('value', (snapshot) => {
             let copy = snapshot.val();
 
-
             for (let breakfst in copy) {
                 breakfastElements.push(
                     {
-                        id : breakfst,
+                        id : copy[breakfst].id,
                         description : copy[breakfst].description,
                         price : copy[breakfst].price,
                         value : copy[breakfst].value,
@@ -32,12 +28,11 @@ class MenuMorning extends Component {
                     }
                 )
             }
-        });
-
         
-        this.setState({
-             menu : breakfastElements
-        })
+            this.setState({
+                menu : breakfastElements
+           })
+        });  
     };
 
     render() {
@@ -47,12 +42,12 @@ class MenuMorning extends Component {
                 {this.state.menu.map((menuBreakfast) => {
                     return (
                         <div key= {menuBreakfast.id}>
-                            <img url={menuBreakfast.img}></img>
+                            <img src={menuBreakfast.img} className="menuIcons"></img>
                             <p>{menuBreakfast.description}</p>
                             <p>{menuBreakfast.price}</p>
                         </div>
                     )
-                })};
+                })}
             </section>
         )
     };

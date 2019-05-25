@@ -39,8 +39,7 @@ const waitersInterf = () => (
 
       <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
       <FirebaseContext.Consumer>
-            {/*{firebase => <MenuMorning firebase={firebase}/>}*/}
-            {firebase => console.log(firebase) }
+           {firebase => <MenuMorning firebase={firebase}/>}
         </FirebaseContext.Consumer>
         
       </div>

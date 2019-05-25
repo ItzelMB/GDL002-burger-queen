@@ -19,7 +19,7 @@ class Firebase {
     this.db = app.database();
   };
 
-  getMenu = () => this.db.ref().child();
+  getRefDb = () => this.db.ref();
   
 };
 
