@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 class MenuMorning extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
 
         this.state = {
@@ -9,39 +9,39 @@ class MenuMorning extends Component {
         };
     };
 
-    componentDidMount(){
+    componentDidMount() {
 
         const firebaseAccess = this.props.firebase.getRefDb().root.child('breakfast');
         let breakfastElements = [];
 
         firebaseAccess.on('value', (snapshot) => {
-            let copy = snapshot.val();
+            let menuCopy = snapshot.val();
 
-            for (let breakfst in copy) {
+            for (let breakfst in menuCopy) {
                 breakfastElements.push(
                     {
-                        id : copy[breakfst].id,
-                        description : copy[breakfst].description,
-                        price : copy[breakfst].price,
-                        value : copy[breakfst].value,
-                        img : copy[breakfst].img,
+                        id: menuCopy[breakfst].id,
+                        description: menuCopy[breakfst].description,
+                        price: menuCopy[breakfst].price,
+                        value: menuCopy[breakfst].value,
+                        img: menuCopy[breakfst].img,
                     }
                 )
             }
-        
+
             this.setState({
-                menu : breakfastElements
-           })
-        });  
+                menu: breakfastElements
+            })
+        });
     };
 
     render() {
 
-        return(
+        return (
             <section>
                 {this.state.menu.map((menuBreakfast) => {
                     return (
-                        <div key= {menuBreakfast.id}>
+                        <div key={menuBreakfast.id}>
                             <img src={menuBreakfast.img} className="menuIcons"></img>
                             <p>{menuBreakfast.description}</p>
                             <p>{menuBreakfast.price}</p>

@@ -1,7 +1,10 @@
 import React from 'react';
 import Client from '../Client/client';
 import MenuMorning from '../Menu/menu';
-import {FirebaseContext} from '../Firebase';
+import MenuDinner from '../MenuDinner/menuDinner';
+import MenuDrinksDin from '../MenuDrinksDin/menuDrinksDin';
+import MenuDrinksMorning from '../MenuDrinksMorning/menuDrinksMorning';
+import { FirebaseContext } from '../Firebase';
 
 const waitersInterf = () => (
   <section>
@@ -25,7 +28,7 @@ const waitersInterf = () => (
     </section>
 
     <Client />
-    
+
     <ul className="nav nav-tabs" id="myTab" role="tablist">
       <li className="nav-item">
         <a className="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">DESAYUNOS</a>
@@ -34,26 +37,29 @@ const waitersInterf = () => (
         <a className="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">COMIDAS</a>
       </li>
     </ul>
-    
+
     <div className="tab-content" id="myTabContent">
 
       <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-      <FirebaseContext.Consumer>
-           {firebase => <MenuMorning firebase={firebase}/>}
+        <h3>PLATILLOS</h3>
+        <FirebaseContext.Consumer>
+          {firebase => <MenuMorning firebase={firebase} />}
         </FirebaseContext.Consumer>
-        
+        <h3>BEBIDAS</h3>
+        <FirebaseContext.Consumer>
+          {firebase => <MenuDrinksMorning firebase={firebase} />}
+        </FirebaseContext.Consumer>
       </div>
 
       <div className="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
         <h3>PLATILLOS</h3>
-          <img src= {require ('../../img/hamburger.png')} alt="sandwich" className="menuIcons"/>
-          <p>sándwich</p>
-          <p>$25.00</p>
-
-          <h3>BEBIDAS</h3>
-          <img src= {require ('../../img/water.png')} alt="sandwich" className="menuIcons"/>
-          <p>sándwich</p>
-          <p>$25.00</p>
+        <FirebaseContext.Consumer>
+          {firebase => <MenuDinner firebase={firebase} />}
+        </FirebaseContext.Consumer>
+        <h3>BEBIDAS</h3>
+        <FirebaseContext.Consumer>
+          {firebase => <MenuDrinksDin firebase={firebase} />}
+        </FirebaseContext.Consumer>
       </div>
     </div>
 
