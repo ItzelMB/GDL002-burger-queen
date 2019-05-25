@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 
+
 class MenuMorning extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            menu: []
+            menu: [],
+            showOrd: false
         };
     };
 
     componentDidMount() {
 
-        const firebaseAccess = this.props.firebase.getRefDb().root.child('breakfast');
+        const firebaseAccess = this.props.firebase.getRefDb().root.child(this.props.sec);
         let breakfastElements = [];
 
         firebaseAccess.on('value', (snapshot) => {
@@ -35,17 +37,23 @@ class MenuMorning extends Component {
         });
     };
 
+    
+
     render() {
 
         return (
             <section>
-                {this.state.menu.map((menuBreakfast) => {
+                {this.state.menu.map((menuBreakfast, index) => {
                     return (
-                        <div key={menuBreakfast.id}>
-                            <img src={menuBreakfast.img} className="menuIcons"></img>
-                            <p>{menuBreakfast.description}</p>
-                            <p>{menuBreakfast.price}</p>
-                        </div>
+                        <section>
+                            <div key={index} id={menuBreakfast.id}>
+                                <img src={menuBreakfast.img} className="menuIcons" onClick={e => this.props.showItem(e,this.state.menu)}></img>
+                                <p>{menuBreakfast.description}</p>
+                                <p>{menuBreakfast.price}</p>
+                            </div>
+
+                           
+                        </section>
                     )
                 })}
             </section>
