@@ -5,31 +5,120 @@
             "description": "sándwich",
             "price": "$25.00",
             "value":25,
-            "img": "../../img/sandwich.png"
+            "img": "../../../../img/sandwich.png"
         }, 
         {
             "id":"02",
             "description": "huevos c/salchicha",
             "price": "$45.00",
             "value":45,
-            "img": "../../img/sandwich.png"
+            "img": "../../../../img/eggs.png"
         }
     ],
 
-    "meals": [
+    "drinksMorning": [
         {
             "id":"03",
-            "description": "simple",
-            "price": "$55.00",
-            "value":55,
-            "img": "../../img/hamburger.png"
+            "description": "café americano",
+            "price": "$18.00",
+            "value":18,
+            "img": "../../../../img/coffe.png"
         }, 
         {
             "id":"04",
+            "description": "leche",
+            "price": "$12.00",
+            "value":12,
+            "img": "../../../../img/milk.png"
+        }, 
+        {
+            "id":"05",
+            "description": "jugo de frutas",
+            "price": "$20.00",
+            "value":20,
+            "img": "../../../../img/juice.png"
+        }
+
+    ],
+
+    "dinner": [
+        {
+            "id":"06",
+            "description": "simple",
+            "price": "$55.00",
+            "value":55,
+            "img": "../../../../img/hamburger.png"
+        }, 
+        {
+            "id":"07",
             "description": "doble",
             "price": "$85.00",
             "value":85,
-            "img": "../../img/hamburger.png"
+            "img": "../../../../img/doble.png"
+        },
+        {
+            "id":"08",
+            "description": "papas fritas",
+            "price": "$25.00",
+            "value":25,
+            "img": "../../../../img/fries.png"
+        }, 
+        {
+            "id":"09",
+            "description": "ensalada",
+            "price": "$45.00",
+            "value":45,
+            "img": "../../../../img/salad.png"
+        }
+
+    ],
+
+    "drinksAfter": [
+        {
+            "id":"10",
+            "description": "agua 500ml",
+            "price": "$12.00",
+            "value":12,
+            "img": "../../../../img/water.png"
+        }, 
+        {
+            "id":"11",
+            "description": "agua 700ml",
+            "price": "$18.00",
+            "value":18,
+            "img": "../../../../img/water700.png"
+        },
+        {
+            "id":"12",
+            "description": "refresco 500ml",
+            "price": "$15.00",
+            "value":15,
+            "img": "../../../../img/soda300.png"
+        }, 
+        {
+            "id":"13",
+            "description": "refresco 700ml",
+            "price": "$22.00",
+            "value":22,
+            "img": "../../../../img/soda700.png"
+        }
+
+    ],
+
+    "extras": [
+        {
+            "id":"14",
+            "description": "queso",
+            "price": "$8.00",
+            "value":8,
+            "img": "../../../../img/cheese.png"
+        }, 
+        {
+            "id":"15",
+            "description": "huevo",
+            "price": "$10.00",
+            "value":10,
+            "img": "../../../../img/cheese.png"
         }
 
     ]

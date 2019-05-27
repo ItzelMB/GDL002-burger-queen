@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 
 class ClientInfo extends Component {
@@ -6,7 +6,7 @@ class ClientInfo extends Component {
         super(props);
     };
 
-    
+
     render() {
         return (
             <h3>{this.props.client}</h3>

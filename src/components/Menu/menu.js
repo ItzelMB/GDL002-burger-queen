@@ -1,51 +1,59 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
-class MenuMorning extends Component {
-    constructor(props){
+
+class Menu extends Component {
+    constructor(props) {
         super(props);
 
         this.state = {
-            menu: []
+            menu: [],
+            showOrd: false
         };
     };
 
-    componentDidMount(){
+    componentDidMount() {
 
-        const firebaseAccess = this.props.firebase.getRefDb().root.child('breakfast');
-        let breakfastElements = [];
+        const firebaseAccess = this.props.firebase.getRefDb().root.child(this.props.sec);
+        let menuElements = [];
 
         firebaseAccess.on('value', (snapshot) => {
-            let copy = snapshot.val();
+            let menuCopy = snapshot.val();
 
-            for (let breakfst in copy) {
-                breakfastElements.push(
+            for (let menuItem in menuCopy) {
+                menuElements.push(
                     {
-                        id : copy[breakfst].id,
-                        description : copy[breakfst].description,
-                        price : copy[breakfst].price,
-                        value : copy[breakfst].value,
-                        img : copy[breakfst].img,
+                        id: menuCopy[menuItem].id,
+                        description: menuCopy[menuItem].description,
+                        price: menuCopy[menuItem].price,
+                        value: menuCopy[menuItem].value,
+                        img: menuCopy[menuItem].img,
                     }
                 )
             }
-        
+
             this.setState({
-                menu : breakfastElements
-           })
-        });  
+                menu: menuElements
+            })
+        });
     };
+
+
 
     render() {
 
-        return(
-            <section>
-                {this.state.menu.map((menuBreakfast) => {
+        return (
+            <section className="row">
+                {this.state.menu.map((itemProperty, index) => {
                     return (
-                        <div key= {menuBreakfast.id}>
-                            <img src={menuBreakfast.img} className="menuIcons"></img>
-                            <p>{menuBreakfast.description}</p>
-                            <p>{menuBreakfast.price}</p>
-                        </div>
+                    
+                            <div key={index} id={itemProperty.id} className="menuElement">
+                                <img src={itemProperty.img} className="menuIcons" onClick={e => this.props.showItem(e, this.state.menu)}></img>
+                                <p>{itemProperty.description}</p>
+                                <p>{itemProperty.price}</p>
+                            </div>
+
+
+                      
                     )
                 })}
             </section>
@@ -53,4 +61,4 @@ class MenuMorning extends Component {
     };
 };
 
-export default MenuMorning;
+export default Menu;
