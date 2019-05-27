@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-class MenuMorning extends Component {
+class Menu extends Component {
     constructor(props) {
         super(props);
 
@@ -14,25 +14,25 @@ class MenuMorning extends Component {
     componentDidMount() {
 
         const firebaseAccess = this.props.firebase.getRefDb().root.child(this.props.sec);
-        let breakfastElements = [];
+        let menuElements = [];
 
         firebaseAccess.on('value', (snapshot) => {
             let menuCopy = snapshot.val();
 
-            for (let breakfst in menuCopy) {
-                breakfastElements.push(
+            for (let menuItem in menuCopy) {
+                menuElements.push(
                     {
-                        id: menuCopy[breakfst].id,
-                        description: menuCopy[breakfst].description,
-                        price: menuCopy[breakfst].price,
-                        value: menuCopy[breakfst].value,
-                        img: menuCopy[breakfst].img,
+                        id: menuCopy[menuItem].id,
+                        description: menuCopy[menuItem].description,
+                        price: menuCopy[menuItem].price,
+                        value: menuCopy[menuItem].value,
+                        img: menuCopy[menuItem].img,
                     }
                 )
             }
 
             this.setState({
-                menu: breakfastElements
+                menu: menuElements
             })
         });
     };
@@ -42,18 +42,18 @@ class MenuMorning extends Component {
     render() {
 
         return (
-            <section>
-                {this.state.menu.map((menuBreakfast, index) => {
+            <section className="row">
+                {this.state.menu.map((itemProperty, index) => {
                     return (
-                        <section>
-                            <div key={index} id={menuBreakfast.id}>
-                                <img src={menuBreakfast.img} className="menuIcons" onClick={e => this.props.showItem(e, this.state.menu)}></img>
-                                <p>{menuBreakfast.description}</p>
-                                <p>{menuBreakfast.price}</p>
+                    
+                            <div key={index} id={itemProperty.id} className="menuElement">
+                                <img src={itemProperty.img} className="menuIcons" onClick={e => this.props.showItem(e, this.state.menu)}></img>
+                                <p>{itemProperty.description}</p>
+                                <p>{itemProperty.price}</p>
                             </div>
 
 
-                        </section>
+                      
                     )
                 })}
             </section>
@@ -61,4 +61,4 @@ class MenuMorning extends Component {
     };
 };
 
-export default MenuMorning;
+export default Menu;
