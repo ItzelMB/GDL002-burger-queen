@@ -3,6 +3,23 @@ import React, { Component } from 'react';
 class ShowOrder extends Component {
     constructor(props) {
         super(props)
+
+        this.state = {
+            orderList:[],
+            total:0
+        }
+    }
+
+    getTotal () {
+        this.setState(
+            {orderList:this.state.orderList.concat(this.props.item)}
+        )
+
+        this.props.orderList.map((item)=>{
+            this.setState=(
+                {total: this.state.total + item.price}
+            )
+        })
     }
 
     

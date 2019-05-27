@@ -4,7 +4,7 @@
   "description": "A project developed with react",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ItzelMB/gdl-burger-queen.git"
+    "url": "https://github.com/ItzelMB/gdl-burger-queen.git"
   },
   "autor": "ItzelMB",
   "license": "MIT",
