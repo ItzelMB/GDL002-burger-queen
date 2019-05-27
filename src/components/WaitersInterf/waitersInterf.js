@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Client from '../Client/client';
 import Menu from '../Menu/menu';
 import ShowOrder from '../ShowOrder/showOrder';
@@ -7,11 +7,11 @@ import { FirebaseContext } from '../Firebase';
 class waitersInterf extends Component {
   constructor() {
     super()
-      this.state = {
-        menu:[],
-        showOrd: false,
-        item : []
-      };
+    this.state = {
+      menu: [],
+      showOrd: false,
+      item: []
+    };
 
   }
 
@@ -19,19 +19,19 @@ class waitersInterf extends Component {
     //console.log(e.target.parent.getAttribute("id"));
     let getId = e.target.parentNode.getAttribute("id");
     menu.map((menuBreakfast) => {
-        if(menuBreakfast.id == getId){
-           this.setState ({
-              menu: [],
-              showOrd : true,
-              item: this.state.item.concat(menuBreakfast) 
-           })
-        }
+      if (menuBreakfast.id == getId) {
+        this.setState({
+          menu: [],
+          showOrd: true,
+          item: this.state.item.concat(menuBreakfast)
+        })
+      }
     })
   };
-   
 
-  render () {
-    return(
+
+  render() {
+    return (
       <section>
         <section className="waitersNav">
           <nav className="navbar navbar-expand-lg navbar-dark bg-dark waitersNav">
@@ -70,39 +70,40 @@ class waitersInterf extends Component {
             </FirebaseContext.Consumer>
             <h3>BEBIDAS</h3>
             <FirebaseContext.Consumer>
-              {firebase => <Menu firebase={firebase} sec="drinksMorning" showItem={this.showItem.bind(this)}/>}
+              {firebase => <Menu firebase={firebase} sec="drinksMorning" showItem={this.showItem.bind(this)} />}
             </FirebaseContext.Consumer>
           </div>
 
           <div className="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
             <h3>PLATILLOS</h3>
             <FirebaseContext.Consumer>
-              {firebase => <Menu firebase={firebase} sec="dinner" showItem={this.showItem.bind(this)}/>}
+              {firebase => <Menu firebase={firebase} sec="dinner" showItem={this.showItem.bind(this)} />}
             </FirebaseContext.Consumer>
             <h3>BEBIDAS</h3>
             <FirebaseContext.Consumer>
-              {firebase => <Menu firebase={firebase} sec="drinksAfter" showItem={this.showItem.bind(this)}/>}
+              {firebase => <Menu firebase={firebase} sec="drinksAfter" showItem={this.showItem.bind(this)} />}
             </FirebaseContext.Consumer>
           </div>
         </div>
 
         <aside>
-          <h3>Pedidos</h3>
+          <h3>DESCRIPCIÓN DE PEDIDO</h3>
           <Client />
 
-          <div>
+          <section>
             {this.state.showOrd ? <ShowOrder item={this.state.item} /> : null}
-          </div>
+          </section>
 
           <section>
             <p>TOTAL</p>
+
           </section>
         </aside>
 
       </section>
     )
   }
-  
+
 };
 
 export default waitersInterf;

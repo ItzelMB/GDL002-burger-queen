@@ -37,7 +37,7 @@ class MenuMorning extends Component {
         });
     };
 
-    
+
 
     render() {
 
@@ -47,12 +47,12 @@ class MenuMorning extends Component {
                     return (
                         <section>
                             <div key={index} id={menuBreakfast.id}>
-                                <img src={menuBreakfast.img} className="menuIcons" onClick={e => this.props.showItem(e,this.state.menu)}></img>
+                                <img src={menuBreakfast.img} className="menuIcons" onClick={e => this.props.showItem(e, this.state.menu)}></img>
                                 <p>{menuBreakfast.description}</p>
                                 <p>{menuBreakfast.price}</p>
                             </div>
 
-                           
+
                         </section>
                     )
                 })}

@@ -24,8 +24,7 @@ class Client extends Component {
     render () {
        return (
         <section>
-            <h3>Cliente</h3>
-            <input type="text" name="Nombre del cliente" className="clientNam" onChange={this.updateName}></input>
+            <input type="text" name="Nombre del cliente" placeholder="Nombre del cliente" className="clientNam" onChange={this.updateName}></input>
             <button onClick={this.renderClientInfo}>Guardar</button>
             {this.state.showClient ? <ClientInfo client={this.state.clientName}/> : null}
         </section>
