@@ -5,14 +5,14 @@
             "description": "sándwich",
             "price": "$25.00",
             "value":25,
-            "img": "../../../../img/sandwich.png"
+            "img": "https://github.com/ItzelMB/gdl-burger-queen/blob/develop/public/img/sandwich.png?raw=true"
         }, 
         {
             "id":"02",
             "description": "huevos c/salchicha",
             "price": "$45.00",
             "value":45,
-            "img": "../../../../img/eggs.png"
+            "img": "https://github.com/ItzelMB/gdl-burger-queen/blob/develop/public/img/eggs.png?raw=true"
         }
     ],
 
@@ -22,21 +22,21 @@
             "description": "café americano",
             "price": "$18.00",
             "value":18,
-            "img": "../../../../img/coffe.png"
+            "img": "https://github.com/ItzelMB/gdl-burger-queen/blob/develop/public/img/coffe.png?raw=true"
         }, 
         {
             "id":"04",
             "description": "leche",
             "price": "$12.00",
             "value":12,
-            "img": "../../../../img/milk.png"
+            "img": "https://github.com/ItzelMB/gdl-burger-queen/blob/develop/public/img/milk.png?raw=true"
         }, 
         {
             "id":"05",
             "description": "jugo de frutas",
             "price": "$20.00",
             "value":20,
-            "img": "../../../../img/juice.png"
+            "img": "https://github.com/ItzelMB/gdl-burger-queen/blob/develop/public/img/juice.png?raw=true"
         }
 
     ],
@@ -47,28 +47,28 @@
             "description": "simple",
             "price": "$55.00",
             "value":55,
-            "img": "../../../../img/hamburger.png"
+            "img": "https://github.com/ItzelMB/gdl-burger-queen/blob/develop/public/img/hamburger.png?raw=true"
         }, 
         {
             "id":"07",
             "description": "doble",
             "price": "$85.00",
             "value":85,
-            "img": "../../../../img/doble.png"
+            "img": "https://github.com/ItzelMB/gdl-burger-queen/blob/develop/public/img/doble.png?raw=true"
         },
         {
             "id":"08",
             "description": "papas fritas",
             "price": "$25.00",
             "value":25,
-            "img": "../../../../img/fries.png"
+            "img": "https://github.com/ItzelMB/gdl-burger-queen/blob/develop/public/img/fries.png?raw=true"
         }, 
         {
             "id":"09",
             "description": "ensalada",
             "price": "$45.00",
             "value":45,
-            "img": "../../../../img/salad.png"
+            "img": "https://github.com/ItzelMB/gdl-burger-queen/blob/develop/public/img/salad.png?raw=true"
         }
 
     ],
@@ -79,46 +79,53 @@
             "description": "agua 500ml",
             "price": "$12.00",
             "value":12,
-            "img": "../../../../img/water.png"
+            "img": "https://github.com/ItzelMB/gdl-burger-queen/blob/develop/public/img/water.png?raw=true"
         }, 
         {
             "id":"11",
             "description": "agua 700ml",
             "price": "$18.00",
             "value":18,
-            "img": "../../../../img/water700.png"
+            "img": "https://github.com/ItzelMB/gdl-burger-queen/blob/develop/public/img/water700.png?raw=true"
         },
         {
             "id":"12",
             "description": "refresco 500ml",
             "price": "$15.00",
             "value":15,
-            "img": "../../../../img/soda300.png"
+            "img": "https://github.com/ItzelMB/gdl-burger-queen/blob/develop/public/img/soda300.png?raw=true"
         }, 
         {
             "id":"13",
             "description": "refresco 700ml",
             "price": "$22.00",
             "value":22,
-            "img": "../../../../img/soda700.png"
+            "img": "https://github.com/ItzelMB/gdl-burger-queen/blob/develop/public/img/soda700.png?raw=true"
+        },
+        {
+            "id":"14",
+            "description": "cerveza",
+            "price": "$22.00",
+            "value":22,
+            "img": "https://github.com/ItzelMB/gdl-burger-queen/blob/develop/public/img/beer.png?raw=true"
         }
 
     ],
 
     "extras": [
         {
-            "id":"14",
+            "id":"15",
             "description": "queso",
             "price": "$8.00",
             "value":8,
-            "img": "../../../../img/cheese.png"
+            "img": "https://github.com/ItzelMB/gdl-burger-queen/blob/develop/public/img/cheese.png?raw=true"
         }, 
         {
-            "id":"15",
+            "id":"16",
             "description": "huevo",
             "price": "$10.00",
             "value":10,
-            "img": "../../../../img/cheese.png"
+            "img": "https://github.com/ItzelMB/gdl-burger-queen/blob/develop/public/img/cheese.png?raw=true"
         }
 
     ]

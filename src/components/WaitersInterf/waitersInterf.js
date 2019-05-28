@@ -54,7 +54,7 @@ class waitersInterf extends Component {
         </section>
 
         <section className="row">
-        <section className="col-8">
+        <section className="col-7">
 
           <nav >
             <ul className="nav nav-tabs" id="myTab" role="tablist">
@@ -96,7 +96,7 @@ class waitersInterf extends Component {
           </div>
           </section>
 
-          <aside className="col-4">
+          <aside className="col-5">
             <h5>DESCRIPCIÓN DE PEDIDO</h5>
             <Client />
             <section>
