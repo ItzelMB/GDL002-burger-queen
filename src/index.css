@@ -8,9 +8,9 @@
 }
 
 aside {
-  height: 800px;
   background-color: #f0f0f0;
-  background-attachment: scroll;
+  margin: 0;
+  padding: 0;
 }
 
 nav ul {
@@ -60,6 +60,11 @@ h4 {
   margin-left: 30px;
   margin-right: 30px;
 
+}
+
+.btn-danger {
+  width: 120px;
+  height: 45px;
 }
 
 .bgLogin {
@@ -130,4 +135,16 @@ h4 {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.total {
+  margin-top: 30px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: #bdbcbc;
+}
+
+.itemDescription {
+  font-size: 1.5rem;
+  padding-top: 15px;
 }

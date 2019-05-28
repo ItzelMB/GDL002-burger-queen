@@ -20,6 +20,8 @@ class Firebase {
   };
 
   getRefDb = () => this.db.ref();
+
+  //saveOrd = (order) =>this.getRefDb.root.child("order").push(order);
   
 };
 
