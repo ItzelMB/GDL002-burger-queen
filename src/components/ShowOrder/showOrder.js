@@ -5,37 +5,29 @@ class ShowOrder extends Component {
         super(props)
 
         this.state = {
-            orderList:[],
-            total:0
+            orderList: [],
+            total: 0
         }
     }
 
-    getTotal () {
-        this.setState(
-            {orderList:this.state.orderList.concat(this.props.item)}
-        )
-
-        this.props.orderList.map((item)=>{
-            this.setState=(
-                {total: this.state.total + item.price}
-            )
-        })
-    }
-
-    
     render() {
         return (
             <div>
                 {
                     this.props.item.map((element, index) => {
                         return (
-                            <div key={index}>
-                                <p>{element.description + "........" + element.price}</p>
+                            <div key={index} id={index} price={element.value}>
+                                <p className="itemDescription">{element.description + "........" + element.price}</p>
+                                <button type="button" className="btn btn-danger" onClick={this.props.removeItem}>Eliminar</button>
                             </div>
                         )
                     })
                 }
 
+                <section className="total">
+                    <h5>TOTAL ${this.props.total}</h5>
+                    <button type="button" className="btn btn-warning saveBtn">ENVIAR PEDIDO</button>
+                </section>
             </div>
         )
     }

@@ -13,24 +13,53 @@ class waitersInterf extends Component {
       menu: [],
       showOrd: false,
       item: [],
+      total: 0
     };
 
   }
 
-  showItem(e, menu) {
-    let getId = e.target.parentNode.getAttribute("id");
+  showItem (event, menu) {
+    let getId = event.target.parentNode.getAttribute("id");
     menu.map((itemProperty) => {
       if (itemProperty.id == getId) {
         this.setState({
           menu: [],
           showOrd: true,
-          item: this.state.item.concat(itemProperty)
+          item: this.state.item.concat(itemProperty),
+          total: itemProperty.value + this.state.total
         })
       }
     })
   };
 
+  removeItem (event) {
+    let arrItemToRemove= [...this.state.item];
+    let getIdToRemove = event.target.parentNode.getAttribute("id");
+    let getItemPrice = event.target.parentNode.getAttribute("price");
+    console.log(getItemPrice)
+    arrItemToRemove.splice(getIdToRemove, 1);
+    this.setState({
+      item : arrItemToRemove,
+      total : this.state.total - getItemPrice
+    })
+    console.log(this.state.item);
+  };
+/*
+  sendOrder (firebase) {
+    let ref = firebase.getRefDb.push();
+    let key = ref.key();
 
+    let orderList = {
+      id: key,
+      client : " ",
+      status: "processing",
+      total: this.state.total,
+      items: this.state.item
+    }
+
+    firebase.saveOrd(orderList);
+  };
+*/
   render() {
     return (
       <section className="waitersInterf">
@@ -54,7 +83,7 @@ class waitersInterf extends Component {
         </section>
 
         <section className="row">
-        <section className="col-8">
+        <section className="col-7">
 
           <nav >
             <ul className="nav nav-tabs" id="myTab" role="tablist">
@@ -96,15 +125,16 @@ class waitersInterf extends Component {
           </div>
           </section>
 
-          <aside className="col-4">
+          <aside className="col-5">
             <h5>DESCRIPCIÓN DE PEDIDO</h5>
             <Client />
             <section>
-              {this.state.showOrd ? <ShowOrder item={this.state.item} /> : null}
+              {this.state.showOrd ? <ShowOrder item={this.state.item} total={this.state.total} removeItem={this.removeItem.bind(this)}/> : null}
             </section>
-            <section>
-              <h5>TOTAL $</h5>
-            </section>
+            {/*}
+            <FirebaseContext.Consumer>
+              {firebase => <button onClick={this.sendOrder()}>ENVIAR PEDIDO</button>}
+    </FirebaseContext.Consumer> */}
           </aside>
           </section>
         
