@@ -14,6 +14,7 @@ const firebaseConfig = {
 
 class Firebase {
   constructor() {
+    console.log(firebaseConfig)
     app.initializeApp(firebaseConfig);
 
     this.db = app.database();
@@ -21,7 +22,7 @@ class Firebase {
 
   getRefDb = () => this.db.ref();
 
-  //saveOrd = (order) =>this.getRefDb.root.child("order").push(order);
+  saveOrd = (order) =>this.getRefDb().root.child("order").push(order);
   
 };
 

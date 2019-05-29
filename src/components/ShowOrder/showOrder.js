@@ -10,6 +10,18 @@ class ShowOrder extends Component {
         }
     }
 
+    sendOrder () {
+
+        let orderList = {
+          client : "test",
+          status: "processing",
+          total: this.props.total,
+          items: this.props.item
+        }
+    
+        this.props.firebase.saveOrd(orderList);
+    };
+
     render() {
         return (
             <div>
@@ -26,7 +38,7 @@ class ShowOrder extends Component {
 
                 <section className="total">
                     <h5>TOTAL ${this.props.total}</h5>
-                    <button type="button" className="btn btn-warning saveBtn">ENVIAR PEDIDO</button>
+                    <button type="button" className="btn btn-warning saveBtn" onClick={this.sendOrder()}>ENVIAR PEDIDO</button>
                 </section>
             </div>
         )

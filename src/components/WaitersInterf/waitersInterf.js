@@ -6,6 +6,7 @@ import { FirebaseContext } from '../Firebase';
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
 
+
 class waitersInterf extends Component {
   constructor() {
     super()
@@ -44,22 +45,9 @@ class waitersInterf extends Component {
     })
     console.log(this.state.item);
   };
-/*
-  sendOrder (firebase) {
-    let ref = firebase.getRefDb.push();
-    let key = ref.key();
 
-    let orderList = {
-      id: key,
-      client : " ",
-      status: "processing",
-      total: this.state.total,
-      items: this.state.item
-    }
+ 
 
-    firebase.saveOrd(orderList);
-  };
-*/
   render() {
     return (
       <section className="waitersInterf">
@@ -129,7 +117,9 @@ class waitersInterf extends Component {
             <h5>DESCRIPCIÓN DE PEDIDO</h5>
             <Client />
             <section>
-              {this.state.showOrd ? <ShowOrder item={this.state.item} total={this.state.total} removeItem={this.removeItem.bind(this)}/> : null}
+              <FirebaseContext.Consumer>
+                {firebase => this.state.showOrd ? <ShowOrder  firebase= {firebase} item={this.state.item} total={this.state.total} removeItem={this.removeItem.bind(this)}/> : null}
+              </FirebaseContext.Consumer>
             </section>
             {/*}
             <FirebaseContext.Consumer>
