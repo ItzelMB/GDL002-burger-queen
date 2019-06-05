@@ -16,7 +16,7 @@ class ShowOrder extends Component {
           client : "test",
           status: "processing",
           total: this.props.total,
-          items: this.props.item
+          items: this.props.item,
         }
     
         this.props.firebase.saveOrd(orderList);
